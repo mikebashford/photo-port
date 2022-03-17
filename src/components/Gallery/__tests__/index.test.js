@@ -18,8 +18,9 @@ describe("Gallery is rendering", () => {
     const { asFragment } = render(<Gallery currentCategory={portrait} />);
     expect(asFragment()).toMatchSnapshot();
   });
-  it("renders", () => {
+  it("has the portrait text", () => {
     const { getByTestId } = render(<Gallery currentCategory={portrait} />);
+    // eslint-disable-next-line testing-library/prefer-screen-queries
     expect(getByTestId("h1tag")).toHaveTextContent("Portraits");
   });
 });
